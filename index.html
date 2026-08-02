@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff6b57" />
+  <title>乔乔汉堡店</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-burger">🍔</div>
+        <div><h1>乔乔汉堡店</h1><p id="levelName">阳光社区 · 第 1 天</p></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>🪙</span><b id="coins">0</b><small>金币</small></div>
+        <div class="stat"><span>⭐</span><b id="score">0</b><small>得分</small></div>
+        <div class="stat combo-stat"><span>🔥</span><b id="combo">0</b><small>连击</small></div>
+      </div>
+    </header>
+
+    <section class="street">
+      <div class="sky-decor cloud one">☁</div><div class="sky-decor cloud two">☁</div>
+      <div class="shop-sign">今日目标：<b id="target">完成 5 单</b></div>
+      <div id="customerQueue" class="customer-queue" aria-label="顾客队列"></div>
+    </section>
+
+    <section class="counter">
+      <div class="ticket-panel">
+        <div class="panel-title"><span>🧾 当前订单</span><small id="orderTimer">请接待顾客</small></div>
+        <div id="orderTicket" class="order-ticket empty">顾客正在来的路上…</div>
+      </div>
+
+      <div class="build-panel">
+        <div class="panel-title"><span>👩‍🍳 制作台</span><small>按订单从下往上放</small></div>
+        <div class="plate">
+          <div id="burgerStack" class="burger-stack"><span class="plate-hint">点击下方食材开始制作</span></div>
+        </div>
+        <div class="actions">
+          <button id="undoBtn" class="secondary" type="button">↩ 撤回</button>
+          <button id="trashBtn" class="secondary danger" type="button">🗑 重做</button>
+          <button id="serveBtn" class="primary" type="button">🔔 交付</button>
+        </div>
+      </div>
+
+      <div class="ingredients-panel">
+        <div class="panel-title"><span>🥬 食材区</span><small id="unlockHint">已解锁 4 种</small></div>
+        <div id="ingredients" class="ingredients"></div>
+      </div>
+    </section>
+
+    <footer class="progress-wrap">
+      <div><span>本日营业进度</span><b id="progressText">0 / 5 单</b></div>
+      <div class="progress"><i id="levelProgress"></i></div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <div id="startModal" class="modal show">
+    <div class="modal-card welcome">
+      <div class="hero-burger">🍔</div>
+      <p class="eyebrow">街角新店开张啦！</p>
+      <h2>欢迎来到乔乔汉堡店</h2>
+      <p>看清订单，从下往上点击正确食材，在顾客耐心耗尽前完成汉堡。</p>
+      <div class="tips"><span>🧠 记住配方</span><span>⚡ 快速制作</span><span>🔥 连续完美</span></div>
+      <button id="startBtn" class="primary big" type="button">开始营业</button>
+    </div>
+  </div>
+
+  <div id="resultModal" class="modal">
+    <div class="modal-card result-card">
+      <div id="resultStars" class="result-stars">⭐⭐⭐</div>
+      <p class="eyebrow">今日打烊</p>
+      <h2 id="resultTitle">太棒了，乔乔！</h2>
+      <div class="result-grid">
+        <div><b id="resultOrders">0</b><span>完成订单</span></div>
+        <div><b id="resultCoins">0</b><span>赚取金币</span></div>
+        <div><b id="resultAccuracy">100%</b><span>准确率</span></div>
+      </div>
+      <p id="newUnlock" class="unlock"></p>
+      <button id="nextBtn" class="primary big" type="button">进入下一天</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
