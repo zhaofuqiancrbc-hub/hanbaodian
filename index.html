@@ -25,6 +25,7 @@
     <section class="street">
       <div class="sky-decor cloud one">☁</div><div class="sky-decor cloud two">☁</div>
       <div class="shop-sign">今日目标：<b id="target">完成 5 单</b></div>
+      <button id="upgradeBtn" class="upgrade-entry" type="button">🏪 店铺升级</button>
       <div id="customerQueue" class="customer-queue" aria-label="顾客队列"></div>
     </section>
 
@@ -83,6 +84,17 @@
       </div>
       <p id="newUnlock" class="unlock"></p>
       <button id="nextBtn" class="primary big" type="button">进入下一天</button>
+    </div>
+  </div>
+
+  <div id="upgradeModal" class="modal">
+    <div class="modal-card upgrade-card">
+      <button id="closeUpgradeBtn" class="modal-close" type="button" aria-label="关闭">×</button>
+      <p class="eyebrow">经营中心</p>
+      <h2>乔乔店铺升级</h2>
+      <p class="shop-wallet">当前金币：<b>🪙 <span id="shopCoins">0</span></b></p>
+      <div id="upgradeList" class="upgrade-list"></div>
+      <p class="upgrade-tip">升级会自动保存，同一设备下次打开仍然有效。</p>
     </div>
   </div>
 
